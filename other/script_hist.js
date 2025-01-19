@@ -1,6 +1,7 @@
 "use strict";
-<<<<<<< HEAD
-
+//
+//
+//lesson 03
 // используя if-else:
 let lang = prompt("Выберите язык:", "ru, en");
 if (lang == "ru") {
@@ -92,7 +93,11 @@ namePerson === "Артем" || namePerson === "Александр"
     ? console.log("директор")
     : console.log("преподаватель")
   : console.log("студент");
-=======
+
+//
+//
+//lesson 04
+("use strict");
 
 let myVar = "Эта строка займёт 29 символов";
 const testVar = function (varCheck, callback) {
@@ -106,4 +111,7 @@ const strFunc = function (str) {
   } else return str.trim().substr(0, 29) + "..."; // Если строка более 30 знаков - то после 30го символа часть текста скрывается и вместо них появляются три точки (...)
 };
 testVar(myVar, strFunc);
->>>>>>> lesson04
+//
+//
+//
+//lesson XX
