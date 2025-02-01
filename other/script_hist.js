@@ -1,5 +1,5 @@
-"use strict";
 // Additional Lesson 02 ---------------------
+"use strict";
 let num = 266219;
 let numHelp = 1; // для начального значения и помощи в цикле
 for (let i = 0; i < String(num).length; i++) {
@@ -132,4 +132,75 @@ testVar(myVar, strFunc);
 
 //
 //
-// Additional Lesson XX ---------------------
+("use strict");
+// Additional Lesson 05 ---------------------
+// 1)
+let arr = ["12", "256", "784", "41", "94", "4841", "2009"];
+let arrCheck = arr.filter(function (num) {
+  return num[0] == 2 || num[0] == 4;
+});
+console.log(arrCheck);
+
+// 2)
+// если при делении числа от 2 до 100 (varSimp) будет оставаться остаток, отличный от 0, то это true -> выводим в консоли ф-ции
+const simpleCheck = function (varSimp) {
+  for (let i = 2; i < varSimp; i++) {
+    if (varSimp % i === 0) return false; //если остаток 0, значит число составное
+  }
+  return true;
+};
+//просто вызыв ф-цию simpleCheck + выводит простые числа в консоль
+function simplePrint(varPrint) {
+  for (let i = 2; i <= varPrint; i++) {
+    if (simpleCheck(i)) console.log("Делители этого числа: 1 и " + i);
+  }
+}
+simplePrint(100);
+//
+// Additional Lesson 06 in Main Repo ---------------------
+//
+// Additional Lesson 07 ---------------------
+("use strict");
+let week = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье",
+];
+
+let myDate = new Date();
+let toDay = new Date();
+
+//т.к. отсчёт в объекте new Date воскресенье начинается с 0,
+// нужно передвинуть дни, чтобы соот-ть элементам массива
+myDate.setDate(toDay.getDay() + 6);
+
+//число дня недели
+let dayOfWeek = myDate.getDate();
+
+// вывод "суббота" и "воскресенье" курсивом + вывод на экран
+const myArr2 = week.findIndex(function (item) {
+  if (item === "Суббота" || item === "Воскресенье") {
+    document.write(item.italics() + "<br>");
+  } else document.write(item + "<br>");
+});
+
+// обращение к эл-ту массива и выделяем жирным текущий день
+for (let key in week) {
+  if (myDate.getDate() == key) {
+    document.write(week[key].bold());
+  }
+}
+console.log(dayOfWeek);
+
+// let newArrRow = [];
+// for (let i = 0; i < week.length; i++) {
+//   newArrRow = week + "\n";
+//   if (newArrRow == toDay) {
+//     document.write(newArrRow.bold() + "11231fgsdg" + "<br>");
+//   }
+// }
+// console.log(newArrRow);
